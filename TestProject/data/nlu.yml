@@ -1,0 +1,71 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - Hi there
+      - Hello, how are you?
+
+  - intent: book_ticket
+    examples: |
+      - I want to book a ticket
+      - Can I book a museum ticket?
+      - I need a ticket for the museum
+      - Book a ticket for me
+      - How can I book a museum ticket?
+
+  - intent: provide_museum
+    examples: |
+      - I want to visit [National Science Centre](museum)
+      - Book a ticket for [Science Museum](museum)
+      - I would like to go to [National Museum](museum)
+      - I am interested in [Rail Museum](museum)
+      - I would like to visit [Nehru Planetarium](museum)
+
+  - intent: provide_time
+    examples: |
+      - I would like to visit on [Saturday](day)
+      - I would like to visit on [21st October](date)
+      - I would like to visit on [22nd August](date)
+      - I would like to visit on [1st January](date)
+      - Book it for [September 15th](date)
+      - How about [next weekend](day)?
+      - Can we do it on [Friday](day)?
+      - I am available on [Monday](day)
+      - Book it for [20th October](date)
+      - Let's schedule it for [October 20](date)
+      - How about [2024-10-20](date)?
+
+  - intent: provide_number_of_tickets
+    examples: |
+      - I need [two](number) tickets
+      - Book [3](number) tickets please
+      - I want to book [four](number) tickets
+      - I need tickets for [five](number) people
+      - [2](number)
+      - [3](number)
+      - [2](number) tickets
+      - [3](number) tickets
+      - [one] ticket
+      - [1] only
+
+  - intent: payment_method
+    examples: |
+      - I want to pay by [card](payment_method)
+      - Can I pay using [UPI](payment_method)?
+      - I'll use [credit card](payment_method) for payment
+      - [Debit card](payment_method) payment is fine
+      - [UPI](payment_method) is my preferred payment option
+      - [card](payment_method)
+      - [UPI](payment_method)
+
+  - intent: goodbye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you later
+      - Thank you, bye
+      - Talk to you later

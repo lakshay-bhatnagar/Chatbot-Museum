@@ -1,0 +1,85 @@
+version: "3.1"
+
+intents:
+  - greet
+  - book_ticket
+  - provide_museum
+  - provide_time
+  - provide_number_of_tickets
+  - payment_method
+  - goodbye
+
+entities:
+  - museum
+  - date
+  - day
+  - number
+  - payment_method
+
+slots:
+  museum:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: museum
+
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+
+  day:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: day
+
+  number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number
+
+  payment_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_method
+
+  unique_id:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+
+  utter_ask_museum:
+    - text: "Which museum would you like to visit?"
+
+  utter_ask_date:
+    - text: "When would you like to visit?"
+
+  utter_ask_number_of_tickets:
+    - text: "How many tickets do you need?"
+
+  utter_ask_payment_method:
+    - text: "How would you like to pay? We support card and UPI."
+
+  utter_confirm_booking:
+    - text: "Got it! I'll book {number} tickets for {museum} on {day}. You can pay via {payment_method}. Is that correct?"
+
+  utter_goodbye:
+    - text: "Thank you! Your tickets have been booked. Enjoy your visit!"
+
+  # Add the missing response
+  utter_iamabot:
+    - text: "I am a bot created to help you book museum tickets."
+
+actions:
+  - action_confirm_booking
+
+session_config:
+  session_expiration_time: 60
