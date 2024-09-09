@@ -56,7 +56,7 @@ class ActionConfirmBooking(Action):
         dispatcher.utter_message(text=confirmation_message)
 
         # Optionally send the QR code image path to the user (adjust this based on your front-end)
-        dispatcher.utter_message(text=f"Here is your QR code: {qr_code_path}")
+        dispatcher.utter_message(text=f"Path of QR code: {qr_code_path}")
 
         # Reset the slots after booking confirmation and store the unique ID
         return [SlotSet("museum", None), SlotSet("date", None), SlotSet("day", None), SlotSet("number", None),
